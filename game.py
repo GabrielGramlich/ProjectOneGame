@@ -1,5 +1,7 @@
 import random as rnd
 import keyboard as kb
+import time
+import sys
 
 class Die:
     def __init__(self, sides=6):    # Initializing with default
@@ -207,20 +209,42 @@ def ResetVariables():
 def GoodBye():
     # Displaying a fairwell to the user
     print('\n\n\n')
-    print('*----------------------------------------------*')
-    print('| Thanks for playing! I hope you lost a bunch. |')
-    print('*----------------------------------------------*'.ljust(pad_amount, '-') + '*')
-    print('|                                 /\\'.ljust(pad_amount, ' ') + '|')
-    print('|                      /\\        //\\\\'.ljust(pad_amount, ' ') + '|')
-    print('|         PANGA       /  \\      ///\\\\\\             /\\'.ljust(pad_amount, ' ') + '|')
-    print('| /\\     DEV OPS     /    \\    ////\\\\\\\\     /\\    /  \\            |')
-    print('|/ /\\               /      \\  /////\\\\\\\\\\   /  \\  /    \\   /\\     /|')
-    print('| / /\\        /\\   /    /\\  \\//////\\\\\\\\\\\\ / /\\ \\/     /\\ /  \\   /\\|')
-    print('|/ /  \\  /\\  //\\\\ /    /  \\ ///////\\\\\\\\\\\\/ /  \\ \\    //\\\\ /\\ \\ //\\|')
-    print('| / /\\ \\/  \\///\\\\\\    / /\\ \\///////\\\\\\\\\\/ / /\\ \\ \\  ///\\\\\\  \\ ///\\|')
-    print('|/ /  \\ \\  ////\\\\\\\\  / /  \\ \\//////\\\\\\\\/ / /  \\ \\ \\////\\\\\\\\\\ ////\\|')
-    print('| / /\\ \\ \\/////\\\\\\\\\\/ / /\\ \\ \\/////\\\\\\/ / / /\\ \\ \\/////\\\\\\\\\\/////\\|')
-    print(break_line)
+    print_line = '*----------------------------------------------*'
+    DelayedPrint(print_line)
+    print_line = '| Thanks for playing! I hope you lost a bunch. |'
+    DelayedPrint(print_line)
+    print_line = '*----------------------------------------------*'.ljust(pad_amount, '-') + '*'
+    DelayedPrint(print_line)
+    print_line = '|        ^                        /\\                        ^'.ljust(pad_amount, ' ') + '|'
+    DelayedPrint(print_line)
+    print_line = '|    ^                 /\\        //\\\\                           ^'.ljust(pad_amount, ' ') + '|'
+    DelayedPrint(print_line)
+    print_line = '|         PANGA    ^  /  \\      ///\\\\\\             /\\'.ljust(pad_amount, ' ') + '|'
+    DelayedPrint(print_line)
+    print_line = '| /\\   ^ DEV OPS     /    \\    ////\\\\\\\\     /\\  ^ /  \\'.ljust(pad_amount, ' ') + '|'
+    DelayedPrint(print_line)
+    print_line = '|/  \\               /      \\  /////\\\\\\\\\\   /  \\  /    \\   /\\     /|'
+    DelayedPrint(print_line)
+    print_line = '| /\\ \\        /\\   /    /\\  \\//////\\\\\\\\\\\\ / /\\ \\/     /\\ /  \\   //|'
+    DelayedPrint(print_line)
+    print_line = '|/  \\ \\  /\\  //\\\\ /    /  \\ ///////\\\\\\\\\\\\/ /  \\ \\    //\\\\ /\\ \\ ///|'
+    DelayedPrint(print_line)
+    print_line = '| /\\ \\ \\/  \\///\\\\\\    / /\\ \\///////\\\\\\\\\\/ / /\\ \\ \\  ///\\\\\\  \\ ////|'
+    DelayedPrint(print_line)
+    print_line = '|/  \\ \\ \\  ////\\\\\\\\  / /  \\ \\//////\\\\\\\\/ / /  \\ \\ \\////\\\\\\\\\\ /////|'
+    DelayedPrint(print_line)
+    print_line = '| /\\ \\ \\ \\/////\\\\\\\\\\/ / /\\ \\ \\/////\\\\\\/ / / /\\ \\ \\/////\\\\\\\\\\//////|'
+    DelayedPrint(print_line)
+    print_line = break_line
+    DelayedPrint(print_line)
+
+
+def DelayedPrint(string):
+    for letter in string:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.0025)
+    print()
 
 
 Main()
